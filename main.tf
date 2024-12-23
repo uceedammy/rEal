@@ -15,7 +15,7 @@ resource "google_container_cluster" "k8scluster" {
 }
 
 output "kubeconfig" {
-  value = google_container_cluster.k8s_cluster.endpoint
+  value = google_container_cluster.k8scluster.endpoint
 }
 
 terraform { 
