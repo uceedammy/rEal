@@ -3,14 +3,14 @@ provider "google" {
   region      = "us-central1"
 }
 
-resource "google_container_cluster" "k8s_cluster" {
+resource "google_container_cluster" "k8scluster" {
   name     = "primary-k8s-cluster"
   location = "us-central1"
 
   initial_node_count = 1  # Reduce the initial node count
   node_config {
     machine_type = "e2-medium"  # Use a smaller machine type to lower resource usage
-    disk_size_gb = 100  # Adjust disk size if needed
+    disk_size_gb = 80  # Adjust disk size if needed
   }
 }
 
