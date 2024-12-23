@@ -19,10 +19,16 @@ jobs:
           terraform_version: 1.5.0
 
       - name: Initialize Terraform
+        env:
+          TF_TOKEN_app_terraform_io: ${{ secrets.TF_TOKEN_app_terraform_io }}
         run: terraform init
 
       - name: Plan Infrastructure
+        env:
+          TF_TOKEN_app_terraform_io: ${{ secrets.TF_TOKEN_app_terraform_io }}
         run: terraform plan
 
       - name: Apply Infrastructure
+        env:
+          TF_TOKEN_app_terraform_io: ${{ secrets.TF_TOKEN_app_terraform_io }}
         run: terraform apply -auto-approve
